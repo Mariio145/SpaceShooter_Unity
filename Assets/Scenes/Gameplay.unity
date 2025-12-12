@@ -3088,6 +3088,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 427604385363462153, guid: 69bc3714960da314dbff5091d607bdbf, type: 3}
   move: {fileID: -5771521749078545347, guid: 66222760d32aedc40863c68d3da00aa5, type: 3}
   shoot: {fileID: 8827726643559225389, guid: 66222760d32aedc40863c68d3da00aa5, type: 3}
+  exit: {fileID: 1234962538}
   pointsText: {fileID: 279006674}
   lives:
   - {fileID: 426185816}
@@ -3244,6 +3245,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1234962538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: SpaceShip/ExitGame
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 66222760d32aedc40863c68d3da00aa5, type: 3}
+  m_ActionId: aacef6c1-72e4-427f-86b9-ed160cc59e29
 --- !u!1 &1249495253
 GameObject:
   m_ObjectHideFlags: 0

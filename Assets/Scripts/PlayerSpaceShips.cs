@@ -29,6 +29,7 @@ public class PlayerSpaceShips : MonoBehaviour
     [Header("Controls")]
     [SerializeField] InputActionReference move;
     [SerializeField] InputActionReference shoot;
+    [SerializeField] InputActionReference exit;
 
     [Header("Lives")] 
     [SerializeField] TextMeshProUGUI pointsText;
@@ -50,11 +51,13 @@ public class PlayerSpaceShips : MonoBehaviour
     {
         move.action.Enable();
         shoot.action.Enable();
+        exit.action.Enable();
 
         move.action.started += OnMove;
         move.action.performed += OnMove;
         move.action.canceled += OnMove;
         shoot.action.started += OnShoot;
+        exit.action.started += ExitGame;
         
         SoundManager.Instance.PlayMusic("Space Rider");
     }
@@ -85,11 +88,13 @@ public class PlayerSpaceShips : MonoBehaviour
     {
         move.action.Disable();
         shoot.action.Disable();
+        exit.action.Disable();
 
         move.action.started -= OnMove;
         move.action.performed -= OnMove;
         move.action.canceled -= OnMove;
         shoot.action.started -= OnShoot;
+        exit.action.started -= ExitGame;
     }
 
     void OnMove(InputAction.CallbackContext obj)
@@ -105,6 +110,11 @@ public class PlayerSpaceShips : MonoBehaviour
             Instantiate(projectilePrefab, shootingPoint.position, Quaternion.identity);
             StartCoroutine(AttackCooldown());
         }
+    }
+    
+    void ExitGame(InputAction.CallbackContext obj)
+    {
+        Application.Quit();
     }
 
     void OnTriggerEnter2D(Collider2D other)
